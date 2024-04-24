@@ -43,6 +43,12 @@ public class CURL {
             curl_easy_setopt_bool(handle, CURLOPT_SSL_VERIFYHOST, verifyHost)
         }
     }
+    
+    public var postData: String = "" {
+        didSet {
+            curl_easy_setopt_string(handle, CURLOPT_POSTFIELDS, postData)
+        }
+    }
 
     public init(
         method: String,
